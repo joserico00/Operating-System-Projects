@@ -7,5 +7,4 @@ Optimal.py simulates Optimal Replacement Algorithm in which it deletes the eleme
 Wsclock.py simulates the WSclock Algorithm in which it simulates both the working set and clock page replacing algoritm. it has a pointer pointing to a index and checks if its referenced and if its in the working set if not moves to the next one until it finds one.
 
 instructions:TO run the files these are the commands Fifo.py run it by this command Python3 fifo.py <size> <Txt file> Optimal.py <size> <Txt file> and wsClock4.py <size> <tau> <Txt file> 
-Help:Carlos Helped me find out that classes objects were needed to help create pages  in wsclock since each page needed 3 diffrent variables and a way to simplify this is by using class objects.
 Classes: https://docs.python.org/3/tutorial/classes.html
