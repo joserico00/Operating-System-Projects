@@ -1,5 +1,5 @@
 Jose E Rodriguez RIOS
-Readme:in this project we simulated what happens when the operating system seaches something in the virtual memory that it is not there.
+Readme:in this project we simulated what happens when the operating system searches for something in the virtual memory that it is not there.
 Since memory is not finite we use Page scheduling algorithms to have a better use of memory space. Page Scheduling Algorithms that were use and simulated in this project  were Optimal Replacement Algorithm ,First in First Out Algorithm and WSclock Algorithm.
 If something is already in memory then the programs doesnt do anything but if it isn't it uses one of many page algoritms to place the page its looking for in the memory.
 Fifo simulates the first in first out page algoritm in which it deletes the first element and adds the new element at the end of the memory.
