@@ -1,0 +1,11 @@
+Jose E Rodriguez RIOS
+Readme:in this project we simulated what happens when the operating system seaches something in the virtual memory that it is not there.
+Since memory is not finite we use Page scheduling algorithms to have a better use of memory space. Page Scheduling Algorithms that were use and simulated in this project  were Optimal Replacement Algorithm ,First in First Out Algorithm and WSclock Algorithm.
+If something is already in memory then the programs doesnt do anything but if it isn't it uses one of many page algoritms to place the page its looking for in the memory.
+Fifo simulates the first in first out page algoritm in which it deletes the first element and adds the new element at the end of the memory.
+Optimal.py simulates Optimal Replacement Algorithm in which it deletes the element that is the farthest used by the OS.
+Wsclock.py simulates the WSclock Algorithm in which it simulates both the working set and clock page replacing algoritm. it has a pointer pointing to a index and checks if its referenced and if its in the working set if not moves to the next one until it finds one.
+
+instructions:TO run the files these are the commands Fifo.py run it by this command Python3 fifo.py <size> <Txt file> Optimal.py <size> <Txt file> and wsClock4.py <size> <tau> <Txt file> 
+Help:Carlos Helped me find out that classes objects were needed to help create pages  in wsclock since each page needed 3 diffrent variables and a way to simplify this is by using class objects.
+Classes: https://docs.python.org/3/tutorial/classes.html
