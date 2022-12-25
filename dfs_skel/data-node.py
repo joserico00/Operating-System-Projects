@@ -1,7 +1,7 @@
 ###############################################################################
 #
 # Filename: data-node.py
-# Author: Jose R. Ortiz and ... (hopefully some students contribution)
+# Author: Jose R. Ortiz and  Jose E Rodriguez Rios
 #
 # Description:
 # 	data node server for the DFS
@@ -27,7 +27,6 @@ def register(meta_ip, meta_port, data_ip, data_port):
 
 	# Establish connection
 	
-	# Fill code	
 	
 	sock = socket.socket() 
 	sock.connect((meta_ip,meta_port))
@@ -70,7 +69,6 @@ class DataNodeTCPHandler(SocketServer.BaseRequestHandler):
 		# Receive the data block.
 		# Send the block id back
 
-		# Fill code
 		print "fsize of this is"
 		print fsize
 		
