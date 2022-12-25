@@ -1,7 +1,7 @@
 ###############################################################################
 #
 # Filename: mds_db.py
-# Author: Jose R. Ortiz and ... (hopefully some students contribution)
+# Author: Jose R. Ortiz and Jose E Rodriguez Rios
 #
 # Description:
 # 	Copy client for the DFS
@@ -28,19 +28,19 @@ def copyToDFS(address, fname, path):
 	# Create a connection to the data server
 
 
-	# Fill code
+	
 	metadata = socket.socket() 
 	metadata.connect(address)
 	# Read file
 
-	# Fill code
+	
 	dire=path+fname
 	f=open(path,"r")
 	data=f.read()
 	# Create a Put packet with the fname and the length of the data,
 	# and sends it to the metadata server 
 
-	# Fill code
+	
 	p=Packet()
 	size=os.path.getsize(path)
 	p.BuildPutPacket(fname, size)
@@ -51,7 +51,7 @@ def copyToDFS(address, fname, path):
 	# Divide the file in blocks
 	# Send the blocks to the data servers
 	metadata.close()
-	# Fill code	
+		
 	signal=0
 	if rec != "DUP":
 		f.seek(0)
@@ -81,7 +81,7 @@ def copyToDFS(address, fname, path):
 				print "size of fileblock sent to datanode"
 				print blocksize
 				msg=f.read(blocksize)
-				print "real size fleblock sent to datanode"
+				print "real size fileblock sent to datanode"
 				print len(msg)
 				#while msg:
 				datablock.sendall(msg)
@@ -110,9 +110,9 @@ def copyToDFS(address, fname, path):
 
 	# Notify the metadata server where the blocks are saved.
 
-	# Fill code
+	
 	print "working on datanodes:"
-		# Fill code
+
 	metadata = socket.socket() 
 	metadata.connect(address)
 
@@ -135,7 +135,7 @@ def copyFromDFS(address, fname, path):
    	# Contact the metadata server to ask for information of fname
     
 
-	# Fill code
+	
 	metadata = socket.socket() 
 	metadata.connect(address)
 	p=Packet()
@@ -143,7 +143,7 @@ def copyFromDFS(address, fname, path):
 	metadata.sendall(p.getEncodedPacket())
 	# If there is no error response Retreive the data blocks
 
-	# Fill code
+	
 	resp=metadata.recv(1024)
 	metadata.close()
 	if resp != "NFOUND":
@@ -195,7 +195,7 @@ def copyFromDFS(address, fname, path):
 		
     	# Save the file
 	
-	# Fill code
+	
 	
  
 if __name__ == "__main__":
