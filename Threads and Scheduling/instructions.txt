@@ -1,0 +1,75 @@
+Assignment 03: Memory Management
+University of Puerto Rico at Rio Piedras
+Department of Computer Science
+CCOM4017: Operating Systems
+Introduction
+In this project the student will simulate 3 page replacement algorithms to gain knowledge and experience in memory management for Operating Systems and other applications.
+The algorithms to implement are:
+First In First Out
+Optimal Replacement Algorithm
+WSClock Page Replacement Algorithm (WSCRA)
+Objectives
+Study and implement three page replacement algorithms
+Get familiarized with Memory Management
+Implementation of simulation environments
+Prerequisites
+Python:
+www.python.org
+Instructions
+Write a simulation of the First In First Out, Optimal Replacement Algorithm, and WSClock Page Replacement Algorithm (WSCPRA) as described in your operating system textbook: Modern Operating Systems by Andrew Tanenbaum.
+
+
+Design Specification
+You may assume that the Physical Memory has room for only N=10 pages.
+For simplification, we will abstract virtual memory access to page accesses. For example, instead of providing a full binary virtual memory access address, we will use the notation (Operation:page address).  For instance, to read page 5, the notation will be R:5; or to write page 3 the notation will be W:3.
+Your program must read a file with a sequence of virtual page access requests. If a page needs to be replaced from the Physical Memory, then the program makes a decision based on the current page access, and whatever bookkeeping data structure it has for the N Physical Memory pages. An example of a sequence of Virtual Page access is:
+R:1 R:2 R:3 R:4 R:7 R:8 W:7 W:3 R:8 R:2 R:9 W:2 R:8 R:2 W:9 R:10 R:11 W:9 R:10 R:12
+The systems will keep track of page faults, meaning whenever a page is brought into memory (absent from Physical Memory) it is considered a page fault (including the initialization phase, when pages are brought into the empty memory).
+Implementation hint:  It is healthy to implement the algorithms checking whether the page is present first, and if it is not, then apply the appropriate PRA.
+Optimal Replacement Algorithm and First in First Out Algorithm
+These algorithms are very simple algorithms and the data structure that you need to implement are minimal.
+For both implementations, you can ignore the type of operation.  
+The optimal algorithm should be implemented as described in the textbook and in class.  You must replace the page that will be accessed the further in the list of memory accesses.  
+The First In First Out must be implemented as simple and dumb as that.  If the page is not present in Physical Memory just replace the first page inserted in physical memory.
+The simulations must be ran as follow:
+   python optimal.py <Number of physical memory pages> <access sequence file>
+
+Example:
+   	python optimal.py 10 input.txt 
+
+python fifo.py <Number of physical memory pages> <access sequence file>
+
+Example:
+python fifo.py 10 input.txt 
+
+Hint:  I suggest implementing the LIFO algorithm first because it is the simplest.
+Working Set Clock Replacement Algorithm
+This algorithm is similar to the previous algorithms, but decisions are made a bit differently. For this algorithm you need a system clock (logical, not real) and a parameter tau.
+For the simulation we will assume that each page request is generated at every time tick, thus with each memory request you will need to increment the system clock by one. 
+The clock is initially 0. For example, for access sequence R:1 R:2 R:3,  
+R:1 occurs in time 0,  R:2 occurs in time 1, and R:3 in time 2 and so on.
+The working set uses an interval of time (tau) that is used to make decisions regarding the page replacement (to check whether the page is in the working set). In our case we let tau=5
+This simulations must be ran as follow:
+   python wsclock.py <Number of physical memory pages> <tau> <access sequence file>
+
+Example:
+   python wsclock.py 10 5 input.txt 
+
+Other notes
+All the programs must be able to read the memory access sequence from a file, and must follow the format specified in this document.  Each access may be separated by a space or a new line. All the projects must be executed as described in the instructions with parameter arguments.
+Deliverables
+The source code of the programs (well documented)
+A README file with:
+description of the programs, including a brief description of the programs
+who helped you or discussed issues with you to finish the program.
+Rubric
+(90 pts) quality of the working solutions
+(30 pts) WSCPRA implemented correctly
+(15 pts) Optimal PRA implemented correctly
+(10 pts) FIFO PRA implemented correctly
+(15 pts) use of classes (objects) and data structures
+(10 pts) documentation
+(10 pts) quality of the README
+(10 pts) description of the programs with explanation of each algorithm.
+
+
